@@ -25,6 +25,7 @@ Route::post('/login', App\Http\Controllers\Api\LoginController::class)->name('lo
 Route::group(['middleware' => ['auth:api']], function () {
 
     Route::apiResource('/kamar', App\Http\Controllers\Api\KamarController::class);
+    Route::apiResource('/pengunjung', App\Http\Controllers\Api\PengunjungController::class);
 
     Route::post('/logout', App\Http\Controllers\Api\LogoutController::class)->name('logout');
 });

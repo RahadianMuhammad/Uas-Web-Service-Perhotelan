@@ -28,6 +28,6 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::apiResource('/pengunjung', App\Http\Controllers\Api\PengunjungController::class);
     Route::apiResource('/karyawan', App\Http\Controllers\Api\KaryawanController::class);
     Route::apiResource('/transaksi', App\Http\Controllers\Api\TransaksiController::class);
-    
+
     Route::post('/logout', App\Http\Controllers\Api\LogoutController::class)->name('logout');
 });

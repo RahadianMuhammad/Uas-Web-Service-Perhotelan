@@ -1,0 +1,999 @@
+{
+	"info": {
+		"_postman_id": "04c6fc2f-29e1-484c-9471-bf550039e8e1",
+		"name": "Perhotelan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "rahadian@gmail.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "rahadian123",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api-hotel-rahadian.herokuapp.com/api/login",
+							"protocol": "https",
+							"host": [
+								"api-hotel-rahadian",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nama",
+									"value": "rahadian",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "rahadian@gmail.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "rahadian123",
+									"type": "default"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "rahadian123",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api-hotel-rahadian.herokuapp.com/api/register",
+							"protocol": "https",
+							"host": [
+								"api-hotel-rahadian",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjU5MzY0OTE1LCJleHAiOjE2NTkzNjg1MTUsIm5iZiI6MTY1OTM2NDkxNSwianRpIjoidmMzV3JHZ1JRd2pETHJOSCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.y_fmLQPMfKESOvLWS6azkMRbDDsrmO6gP-tYnUU_dtU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-hotel-rahadian.herokuapp.com/api/user",
+							"protocol": "https",
+							"host": [
+								"api-hotel-rahadian",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjU5MzY0OTE1LCJleHAiOjE2NTkzNjg1MTUsIm5iZiI6MTY1OTM2NDkxNSwianRpIjoidmMzV3JHZ1JRd2pETHJOSCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.y_fmLQPMfKESOvLWS6azkMRbDDsrmO6gP-tYnUU_dtU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Kamar",
+			"item": [
+				{
+					"name": "menampilkan semua data kamar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXBpLWhvdGVsLXJhaGFkaWFuLmhlcm9rdWFwcC5jb20vYXBpL2xvZ2luIiwiaWF0IjoxNjU5MzczOTE2LCJleHAiOjE2NTkzNzc1MTYsIm5iZiI6MTY1OTM3MzkxNiwianRpIjoiS2ZGNVJic0xQR1A1cmVjTyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.8jYx3DN6wcY2fet8zEvMsyAAAwWaBlziWutYHEbs65U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-hotel-rahadian.herokuapp.com/api/kamar",
+							"protocol": "https",
+							"host": [
+								"api-hotel-rahadian",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"kamar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tambah kamar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXBpLWhvdGVsLXJhaGFkaWFuLmhlcm9rdWFwcC5jb20vYXBpL2xvZ2luIiwiaWF0IjoxNjU5MzczOTE2LCJleHAiOjE2NTkzNzc1MTYsIm5iZiI6MTY1OTM3MzkxNiwianRpIjoiS2ZGNVJic0xQR1A1cmVjTyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.8jYx3DN6wcY2fet8zEvMsyAAAwWaBlziWutYHEbs65U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "jenis_kamar",
+									"value": "super",
+									"type": "default"
+								},
+								{
+									"key": "harga",
+									"value": "2000",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api-hotel-rahadian.herokuapp.com/api/kamar",
+							"protocol": "https",
+							"host": [
+								"api-hotel-rahadian",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"kamar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update kamar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjU5MzY2NzI5LCJleHAiOjE2NTkzNzAzMjksIm5iZiI6MTY1OTM2NjcyOSwianRpIjoiWlVJeGkzajg1d2FIV2Z5eSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.OVYR--JKDEqe2J4jRN8i2QZu0zk8PjvLgptm75R72VY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "jenis_kamar",
+									"value": "edit",
+									"type": "default"
+								},
+								{
+									"key": "harga",
+									"value": "9000",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api-hotel-rahadian.herokuapp.com/api/kamar/1",
+							"protocol": "https",
+							"host": [
+								"api-hotel-rahadian",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"kamar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hapus kamar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjU5MzY2NzI5LCJleHAiOjE2NTkzNzAzMjksIm5iZiI6MTY1OTM2NjcyOSwianRpIjoiWlVJeGkzajg1d2FIV2Z5eSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.OVYR--JKDEqe2J4jRN8i2QZu0zk8PjvLgptm75R72VY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api-hotel-rahadian.herokuapp.com/api/kamar/1",
+							"protocol": "https",
+							"host": [
+								"api-hotel-rahadian",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"kamar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail kamar berdasarkan id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjU5MzY3Mzc5LCJleHAiOjE2NTkzNzA5NzksIm5iZiI6MTY1OTM2NzM3OSwianRpIjoiUzZIc3A3ZGg4THZndmptUCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.tadUlpZOYfoCmzvsCJTQPKVEq2R6C5U1YjMVSON0mDk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-hotel-rahadian.herokuapp.com/api/kamar/3",
+							"protocol": "https",
+							"host": [
+								"api-hotel-rahadian",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"kamar",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pengunjung",
+			"item": [
+				{
+					"name": "tampil data semua pengunjung",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjU5MzY4NDI5LCJleHAiOjE2NTkzNzIwMjksIm5iZiI6MTY1OTM2ODQyOSwianRpIjoiNnJUZ0Y5RnlvOEY2cXN0NiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.IbolYRvAo1LuIFtpG9AmehM3t9eUmGM3dwuREMe5Bk0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-hotel-rahadian.herokuapp.com/api/pengunjung",
+							"protocol": "https",
+							"host": [
+								"api-hotel-rahadian",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"pengunjung"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tambah pengunjung",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjU5MzczMDIxLCJleHAiOjE2NTkzNzY2MjEsIm5iZiI6MTY1OTM3MzAyMSwianRpIjoieHFod1dHZ3hXT0NwTWlxTyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.hB_x2mSvGlZqgOS9b0CB9NE5hWpIxll9NgYA1vScqb4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nama_pengunjung",
+									"value": "rahadian",
+									"type": "default"
+								},
+								{
+									"key": "alamat",
+									"value": "mataram",
+									"type": "default"
+								},
+								{
+									"key": "jenis_kelamin",
+									"value": "pria",
+									"type": "default"
+								},
+								{
+									"key": "no_telp",
+									"value": "087856780210",
+									"type": "default"
+								},
+								{
+									"key": "no_ktp",
+									"value": "5202022510000004",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api-hotel-rahadian.herokuapp.com/api/pengunjung",
+							"protocol": "https",
+							"host": [
+								"api-hotel-rahadian",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"pengunjung"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update pengunjung",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjU5MzY4NDI5LCJleHAiOjE2NTkzNzIwMjksIm5iZiI6MTY1OTM2ODQyOSwianRpIjoiNnJUZ0Y5RnlvOEY2cXN0NiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.IbolYRvAo1LuIFtpG9AmehM3t9eUmGM3dwuREMe5Bk0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nama_pengunjung",
+									"value": "Riyan",
+									"type": "default"
+								},
+								{
+									"key": "alamat",
+									"value": "Lobar",
+									"type": "default"
+								},
+								{
+									"key": "jenis_kelamin",
+									"value": "Pria",
+									"type": "default"
+								},
+								{
+									"key": "no_telp",
+									"value": "087856780219",
+									"type": "default"
+								},
+								{
+									"key": "no_ktp",
+									"value": "5202022510000004",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api-hotel-rahadian.herokuapp.com/api/pengunjung/1",
+							"protocol": "https",
+							"host": [
+								"api-hotel-rahadian",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"pengunjung",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail pengunjung berdasarkan id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjU5MzY4NDI5LCJleHAiOjE2NTkzNzIwMjksIm5iZiI6MTY1OTM2ODQyOSwianRpIjoiNnJUZ0Y5RnlvOEY2cXN0NiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.IbolYRvAo1LuIFtpG9AmehM3t9eUmGM3dwuREMe5Bk0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-hotel-rahadian.herokuapp.com/api/pengunjung/1",
+							"protocol": "https",
+							"host": [
+								"api-hotel-rahadian",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"pengunjung",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hapus pengunjung",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjU5MzY4NDI5LCJleHAiOjE2NTkzNzIwMjksIm5iZiI6MTY1OTM2ODQyOSwianRpIjoiNnJUZ0Y5RnlvOEY2cXN0NiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.IbolYRvAo1LuIFtpG9AmehM3t9eUmGM3dwuREMe5Bk0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api-hotel-rahadian.herokuapp.com/api/pengunjung/1",
+							"protocol": "https",
+							"host": [
+								"api-hotel-rahadian",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"pengunjung",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Karyawan",
+			"item": [
+				{
+					"name": "tampil data karyawan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXBpLWhvdGVsLXJhaGFkaWFuLmhlcm9rdWFwcC5jb20vYXBpL2xvZ2luIiwiaWF0IjoxNjU5Mzc0NDQzLCJleHAiOjE2NTkzNzgwNDMsIm5iZiI6MTY1OTM3NDQ0MywianRpIjoibDZwSzZITmp1clBKUm1pbCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.55RW0SLaGR9AI78t_p88J168LQyOFeOwD-mVD66AZ08",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-hotel-rahadian.herokuapp.com/api/karyawan",
+							"protocol": "https",
+							"host": [
+								"api-hotel-rahadian",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"karyawan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tambah karyawan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXBpLWhvdGVsLXJhaGFkaWFuLmhlcm9rdWFwcC5jb20vYXBpL2xvZ2luIiwiaWF0IjoxNjU5Mzc0NDQzLCJleHAiOjE2NTkzNzgwNDMsIm5iZiI6MTY1OTM3NDQ0MywianRpIjoibDZwSzZITmp1clBKUm1pbCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.55RW0SLaGR9AI78t_p88J168LQyOFeOwD-mVD66AZ08",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nama_karyawan",
+									"value": "riyan",
+									"type": "default"
+								},
+								{
+									"key": "jenis_kelamin",
+									"value": "pria",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api-hotel-rahadian.herokuapp.com/api/karyawan",
+							"protocol": "https",
+							"host": [
+								"api-hotel-rahadian",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"karyawan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update karyawan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjU5MzY5NTM2LCJleHAiOjE2NTkzNzMxMzYsIm5iZiI6MTY1OTM2OTUzNiwianRpIjoiZDhoT2dxdUJTc3h2Uks1WCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.tNNKBVD_REGgoIiUtm3fAb4Vklo34KKruOYCYzus5v8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nama_karyawan",
+									"value": "sabri",
+									"type": "default"
+								},
+								{
+									"key": "jenis_kelamin",
+									"value": "pria",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api-hotel-rahadian.herokuapp.com/api/karyawan/1",
+							"protocol": "https",
+							"host": [
+								"api-hotel-rahadian",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"karyawan",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail karyawan berdasarkan id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjU5MzY5NTM2LCJleHAiOjE2NTkzNzMxMzYsIm5iZiI6MTY1OTM2OTUzNiwianRpIjoiZDhoT2dxdUJTc3h2Uks1WCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.tNNKBVD_REGgoIiUtm3fAb4Vklo34KKruOYCYzus5v8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-hotel-rahadian.herokuapp.com/api/karyawan/1",
+							"protocol": "https",
+							"host": [
+								"api-hotel-rahadian",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"karyawan",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hapus karyawan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjU5MzY5NTM2LCJleHAiOjE2NTkzNzMxMzYsIm5iZiI6MTY1OTM2OTUzNiwianRpIjoiZDhoT2dxdUJTc3h2Uks1WCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.tNNKBVD_REGgoIiUtm3fAb4Vklo34KKruOYCYzus5v8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api-hotel-rahadian.herokuapp.com/api/karyawan/1",
+							"protocol": "https",
+							"host": [
+								"api-hotel-rahadian",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"karyawan",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaksi",
+			"item": [
+				{
+					"name": "tampil data transaksi",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjU5MzcwOTc5LCJleHAiOjE2NTkzNzQ1NzksIm5iZiI6MTY1OTM3MDk3OSwianRpIjoiSnBJMmozbTUyMzQ5ZnRObyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.jKdpDLi3lCKQJ6Go9SATxZEphJXm2fwIwb7_H-INQto",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-hotel-rahadian.herokuapp.com/api/transaksi",
+							"protocol": "https",
+							"host": [
+								"api-hotel-rahadian",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"transaksi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tambah transaksi",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXBpLWhvdGVsLXJhaGFkaWFuLmhlcm9rdWFwcC5jb20vYXBpL2xvZ2luIiwiaWF0IjoxNjU5Mzc0NDQzLCJleHAiOjE2NTkzNzgwNDMsIm5iZiI6MTY1OTM3NDQ0MywianRpIjoibDZwSzZITmp1clBKUm1pbCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.55RW0SLaGR9AI78t_p88J168LQyOFeOwD-mVD66AZ08",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id_pengunjung",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "id_karyawan",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "jumlah_kamar",
+									"value": "12",
+									"type": "default"
+								},
+								{
+									"key": "tanggal_masuk",
+									"value": "2022-1-1",
+									"type": "default"
+								},
+								{
+									"key": "lama_nginap",
+									"value": "12",
+									"type": "default"
+								},
+								{
+									"key": "total_harga",
+									"value": "1000000",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api-hotel-rahadian.herokuapp.com/api/transaksi",
+							"protocol": "https",
+							"host": [
+								"api-hotel-rahadian",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"transaksi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update transaksi",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjU5MzcwOTc5LCJleHAiOjE2NTkzNzQ1NzksIm5iZiI6MTY1OTM3MDk3OSwianRpIjoiSnBJMmozbTUyMzQ5ZnRObyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.jKdpDLi3lCKQJ6Go9SATxZEphJXm2fwIwb7_H-INQto",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id_pengunjung",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "id_karyawan",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "jumlah_kamar",
+									"value": "20",
+									"type": "default"
+								},
+								{
+									"key": "tanggal_masuk",
+									"value": "2022-08-02",
+									"type": "default"
+								},
+								{
+									"key": "lama_nginap",
+									"value": "20",
+									"type": "default"
+								},
+								{
+									"key": "total_harga",
+									"value": "7000000",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api-hotel-rahadian.herokuapp.com/api/transaksi/1",
+							"protocol": "https",
+							"host": [
+								"api-hotel-rahadian",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"transaksi",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail transaksi berdasarkan id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjU5MzcwOTc5LCJleHAiOjE2NTkzNzQ1NzksIm5iZiI6MTY1OTM3MDk3OSwianRpIjoiSnBJMmozbTUyMzQ5ZnRObyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.jKdpDLi3lCKQJ6Go9SATxZEphJXm2fwIwb7_H-INQto",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-hotel-rahadian.herokuapp.com/api/transaksi/1",
+							"protocol": "https",
+							"host": [
+								"api-hotel-rahadian",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"transaksi",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hapus transaksi",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjU5MzcwOTc5LCJleHAiOjE2NTkzNzQ1NzksIm5iZiI6MTY1OTM3MDk3OSwianRpIjoiSnBJMmozbTUyMzQ5ZnRObyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.jKdpDLi3lCKQJ6Go9SATxZEphJXm2fwIwb7_H-INQto",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api-hotel-rahadian.herokuapp.com/api/transaksi/1",
+							"protocol": "https",
+							"host": [
+								"api-hotel-rahadian",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"transaksi",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
